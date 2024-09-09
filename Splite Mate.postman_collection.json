@@ -1,0 +1,2469 @@
+{
+	"info": {
+		"_postman_id": "b1c1c233-932f-4516-96e0-31c4cb43d66c",
+		"name": "Splite Mate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31228604",
+		"_collection_link": "https://techfusiontechnologies.postman.co/workspace/Tech-Fusion-Technologies~48294d3b-e14f-4b50-853f-1a1a4a8a1b8c/collection/31228604-b1c1c233-932f-4516-96e0-31c4cb43d66c?action=share&source=collection_link&creator=31228604"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "send mail",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_name\": \"Test User\",\r\n    \"email\": \"pmeet007m@gmail.com\",\r\n    \"mobile\": \"638657556\",\r\n    \"password\": \"Meet123\",\r\n    \"security_pin\": 123456,\r\n    \"gender\": \"male\",\r\n    \"birth_date\": \"1998-05-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_name\": \"Test User\",\r\n    \"email\": \"pmeetoo7n@gmail.com\",\r\n    \"mobile\": \"1234567890\",\r\n    \"password\": \"Meet123\",\r\n    \"security_pin\": 123456,\r\n    \"gender\": \"male\",\r\n    \"birth_date\": \"1998-05-02\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/register",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "CREATED",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 03 Sep 2024 20:57:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "session=eyJlbWFpbCI6InBtZWV0b283bkBnbWFpbC5jb20iLCJvdHAiOjM5NTA0NH0.Ztd4Ow.fdZxdbLViLcC65HLwE12yn27FoU; HttpOnly; Path=/"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User registered successfully\"\n}"
+						},
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_name\": \"Test User\",\r\n    \"email\": \"pmeetoo7n@gmail.com\",\r\n    \"mobile\": \"1234567890\",\r\n    \"password\": \"Meet123\",\r\n    \"security_pin\": 123456,\r\n    \"gender\": \"male\",\r\n    \"birth_date\": \"1998-05-02\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/register",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "INTERNAL SERVER ERROR",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Sep 2024 10:29:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "88"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"(1062, \\\"Duplicate entry '1234567890' for key 'users.mobile_UNIQUE'\\\")\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Verify OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otp\": 591414,\r\n    \"email\": \"pmeet007m@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/verify_otp",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"verify_otp"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"otp\": 591414,\r\n    \"email\": \"pmeet007m@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/verify_otp",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"verify_otp"
+									]
+								}
+							},
+							"status": "BAD REQUEST",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 03 Sep 2024 19:11:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Invalid OTP\"\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"otp\": 254084,\r\n    \"email\": \"meetpatel09m@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/verify_otp",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"verify_otp"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Sep 2024 13:41:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "Vary",
+									"value": "Cookie"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "session=; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0; HttpOnly; Path=/"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"OTP verified successfully. User is now verified.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobile\": \"638657556\",\r\n    \"password\": \"Meet123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Verify OTP Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"mobile\": \"638657556\",\r\n    \"password\": \"Meet123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 03 Sep 2024 19:28:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "514"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNTM5MTY4NywianRpIjoiNjJkNjdhNGYtZDQ5MS00YTJjLThmMTctZmM4NDYzODA5NzYzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzI1MzkxNjg3LCJjc3JmIjoiZjc0MWExMmItM2U5Yi00YzYwLTg1NTYtMGI5MjJkY2I5ZmFiIiwiZXhwIjoxNzI1MzkyNTg3fQ.W6ZQVpT7amjM_wJktxkECmtdg3RJyH9xF3zVD0irkc4\",\n    \"user\": {\n        \"birth_date\": \"male\",\n        \"email\": \"pmeet007m@gmail.com\",\n        \"gender\": \"male\",\n        \"mobile\": 638657556,\n        \"user_id\": 1,\n        \"user_name\": \"Test User\"\n    }\n}"
+						},
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"mobile\": \"638657556\",\r\n    \"password\": \"Meet123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "UNAUTHORIZED",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Sep 2024 12:18:43 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Invalid mobile number\"\n}"
+						},
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"mobile\": \"9632580741\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Sep 2024 14:19:47 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "515"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNTU0NTk4NywianRpIjoiYjRiYmVmNDItZjVlYy00NzAwLThiM2QtNzYyMWVjMzZkZTI2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MTgsIm5iZiI6MTcyNTU0NTk4NywiY3NyZiI6ImE2YjdkYzAyLTQ3MjEtNDFlOC1hMTA0LWE0ZWZhYzMzY2YwOSIsImV4cCI6MTcyODEzNzk4N30.d_YCwqEzOCm0BvTL_DPrwieqZFAKS5p_QfAaJAebR8U\",\n    \"user\": {\n        \"birth_date\": \"Male\",\n        \"email\": \"meetpatel09m@gmail.com\",\n        \"gender\": \"Male\",\n        \"mobile\": 9632580741,\n        \"user_id\": 18,\n        \"user_name\": \"Meet\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNTM5MTY4NywianRpIjoiNjJkNjdhNGYtZDQ5MS00YTJjLThmMTctZmM4NDYzODA5NzYzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzI1MzkxNjg3LCJjc3JmIjoiZjc0MWExMmItM2U5Yi00YzYwLTg1NTYtMGI5MjJkY2I5ZmFiIiwiZXhwIjoxNzI1MzkyNTg3fQ.W6ZQVpT7amjM_wJktxkECmtdg3RJyH9xF3zVD0irkc4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"current_password\": \"yournewpassword\",\r\n  \"new_password\": \"Meet123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/change_password",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"change_password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"current_password\": \"yournewpassword\",\r\n  \"new_password\": \"Meet123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/change_password",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"change_password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 03 Sep 2024 19:42:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Password changed successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Change Security Pin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNTM5Mjg0MywianRpIjoiYWFkZDM2OTEtMTAyNi00OTBlLTk4ZDctOGE5ZWM2ZmQ3NjczIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzI1MzkyODQzLCJjc3JmIjoiNmJmNjkxZmItNTQ4NC00NzhiLTlmNTMtMzE0ZmU1OGM3NjNiIiwiZXhwIjoxNzI1MzkzNzQzfQ.ajHRMJVtScKAtyGw5NWsY-YwKi4REXO3ksxQ60LZuB4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNTM5MTY4NywianRpIjoiNjJkNjdhNGYtZDQ5MS00YTJjLThmMTctZmM4NDYzODA5NzYzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzI1MzkxNjg3LCJjc3JmIjoiZjc0MWExMmItM2U5Yi00YzYwLTg1NTYtMGI5MjJkY2I5ZmFiIiwiZXhwIjoxNzI1MzkyNTg3fQ.W6ZQVpT7amjM_wJktxkECmtdg3RJyH9xF3zVD0irkc4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"current_security_pin\": 654321,\n  \"new_security_pin\": 123456\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/change_security_pin",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"change_security_pin"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Change Security Pin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNTM5MTY4NywianRpIjoiNjJkNjdhNGYtZDQ5MS00YTJjLThmMTctZmM4NDYzODA5NzYzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzI1MzkxNjg3LCJjc3JmIjoiZjc0MWExMmItM2U5Yi00YzYwLTg1NTYtMGI5MjJkY2I5ZmFiIiwiZXhwIjoxNzI1MzkyNTg3fQ.W6ZQVpT7amjM_wJktxkECmtdg3RJyH9xF3zVD0irkc4"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"current_security_pin\": 123456,\n  \"new_security_pin\": 654321\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/change_security_pin",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"change_security_pin"
+									]
+								}
+							},
+							"status": "UNAUTHORIZED",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 03 Sep 2024 19:47:59 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Incorrect current security pin\"\n}"
+						},
+						{
+							"name": "Change Security Pin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNTM5MTY4NywianRpIjoiNjJkNjdhNGYtZDQ5MS00YTJjLThmMTctZmM4NDYzODA5NzYzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzI1MzkxNjg3LCJjc3JmIjoiZjc0MWExMmItM2U5Yi00YzYwLTg1NTYtMGI5MjJkY2I5ZmFiIiwiZXhwIjoxNzI1MzkyNTg3fQ.W6ZQVpT7amjM_wJktxkECmtdg3RJyH9xF3zVD0irkc4"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"current_security_pin\": 654321,\n  \"new_security_pin\": 123456\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/change_security_pin",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"change_security_pin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 03 Sep 2024 19:48:20 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Security pin changed successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Friends",
+			"item": [
+				{
+					"name": "Add Friend",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"mobile\": \"1234567890\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/add_friend",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"add_friend"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"mobile\": \"1234567890\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/add_friend",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"add_friend"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 03 Sep 2024 20:59:18 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"You are already friends\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Friends",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/get_friends",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"get_friends"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/get_friends",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"get_friends"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 03 Sep 2024 21:09:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "229"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"friends\": [\n        {\n            \"birth_date\": \"Sat, 02 May 1998 00:00:00 GMT\",\n            \"email\": \"pmeetoo7n@gmail.com\",\n            \"gender\": \"male\",\n            \"mobile\": 1234567890,\n            \"user_id\": 2,\n            \"user_name\": \"Test User\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Friend by mobile",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/get_friend_by_mobile/1212121212",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"get_friend_by_mobile",
+										"1212121212"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Sep 2024 23:01:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "204"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"friend\": {\n        \"birth_date\": \"Sat, 02 May 1998 00:00:00 GMT\",\n        \"email\": \"pmeet007m@gmail.com\",\n        \"gender\": \"male\",\n        \"mobile\": 1212121212,\n        \"user_id\": 1,\n        \"user_name\": \"Test User\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Groups",
+			"item": [
+				{
+					"name": "Create Group",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"group_name\": \"Collge Friends\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/create_group",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"create_group"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"group_name\": \"Collge Friends\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/create_group",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"create_group"
+									]
+								}
+							},
+							"status": "CREATED",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 03 Sep 2024 21:26:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "63"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"group_id\": 1,\n    \"message\": \"Group created successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Member",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"group_id\": 2,\r\n  \"member_id\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/add_group_member",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"add_group_member"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"group_id\": 1,\r\n  \"member_id\": 2\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/add_group_member",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"add_group_member"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 03 Sep 2024 21:34:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Member is already in the group\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Group Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/get_group_details/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"get_group_details",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/get_group_details/1",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"get_group_details",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 03 Sep 2024 21:48:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "410"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"group_details\": {\n        \"created_at\": \"Wed, 04 Sep 2024 02:56:31 GMT\",\n        \"email\": \"pmeet007m@gmail.com\",\n        \"group_id\": 1,\n        \"group_name\": \"Collge Friends\",\n        \"members\": [\n            {\n                \"email\": \"pmeetoo7n@gmail.com\",\n                \"member_id\": 2,\n                \"mobile\": 1234567890,\n                \"user_name\": \"Test User\"\n            }\n        ],\n        \"mobile\": 638657556,\n        \"user_id\": 1,\n        \"user_name\": \"Test User\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Groups",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNTQwMDMzOCwianRpIjoiYWQ3NzYxYzctOTVjZi00NDgyLWE1MGEtZjYwZWY2Y2JhZWVjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MiwibmJmIjoxNzI1NDAwMzM4LCJjc3JmIjoiYTM3MDBmZjktYTkyNC00ZWQyLWJlMDgtZTA0NjFiNjFkZjc1IiwiZXhwIjoxNzI1NDAxMjM4fQ.c5PUssJstqoVWomRDekL4ffa1-YmaiKsEF40Sn0UbJ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/list_groups",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"list_groups"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List Groups",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/list_groups",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"list_groups"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 03 Sep 2024 22:01:39 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "309"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"groups\": [\n        {\n            \"created_at\": \"Wed, 04 Sep 2024 02:56:31 GMT\",\n            \"creator_email\": \"pmeet007m@gmail.com\",\n            \"creator_id\": 1,\n            \"creator_mobile\": 638657556,\n            \"creator_name\": \"Test User\",\n            \"group_id\": 1,\n            \"group_name\": \"Collge Friends\",\n            \"member_count\": 1\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Group",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"group_id\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/delete_group",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"delete_group"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"group_id\": 1\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/delete_group",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"delete_group"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 03 Sep 2024 22:16:40 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Group deleted successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get No members",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/non_group_member_friends/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"non_group_member_friends",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/non_group_member_friends/2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"non_group_member_friends",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Sep 2024 06:57:34 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "61"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"No friends found who are not in the group\"\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3000/non_group_member_friends/3",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"non_group_member_friends",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 07 Sep 2024 06:58:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "176"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"friends\": [\n        {\n            \"email\": \"pmeetoo7n@gmail.com\",\n            \"mobile\": 1234567890,\n            \"user_id\": 2,\n            \"user_name\": \"Test User\"\n        }\n    ],\n    \"message\": \"success\"\n}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Create Payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 300.00,\r\n    \"description\": \"Shared dinner\",\r\n    \"splits\": [\r\n        {\r\n            \"user_id\": [1, 2],\r\n            \"amount\": 300.00\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/create_payment",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"create_payment"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"amount\": 300.00,\r\n    \"description\": \"Shared dinner\",\r\n    \"splits\": [\r\n        {\r\n            \"user_id\": [1, 2],\r\n            \"amount\": 300.00\r\n        }\r\n    ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/create_payment",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"create_payment"
+									]
+								}
+							},
+							"status": "CREATED",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 03 Sep 2024 23:50:06 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Payment recorded successfully\"\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"amount\": 300.00,\r\n    \"description\": \"Group dinner\",\r\n    \"splits\": [\r\n        {\r\n            \"group_id\": 2,\r\n            \"amount\": 300.00\r\n        }\r\n    ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:3000/create_payment",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3000",
+									"path": [
+										"create_payment"
+									]
+								}
+							},
+							"status": "CREATED",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Sep 2024 22:34:56 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Payment recorded successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Upload Bill",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <your_token>"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "bill_image",
+									"type": "file",
+									"src": "/C:/Users/pmeet/Downloads/b3.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/upload_bill",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"upload_bill"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Upload Bill",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer <your_token>"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "bill_image",
+											"type": "file",
+											"src": "/C:/Users/pmeet/Downloads/b5.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/upload_bill",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"upload_bill"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 04 Sep 2024 02:18:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "24"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"amount\": \"30.15\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Currency Rate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://v6.exchangerate-api.com/v6/72272ca2240362cba0b6f71b/latest/GBP",
+							"protocol": "https",
+							"host": [
+								"v6",
+								"exchangerate-api",
+								"com"
+							],
+							"path": [
+								"v6",
+								"72272ca2240362cba0b6f71b",
+								"latest",
+								"GBP"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://v6.exchangerate-api.com/v6/72272ca2240362cba0b6f71b/latest/GBP",
+									"protocol": "https",
+									"host": [
+										"v6",
+										"exchangerate-api",
+										"com"
+									],
+									"path": [
+										"v6",
+										"72272ca2240362cba0b6f71b",
+										"latest",
+										"GBP"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 04 Sep 2024 02:19:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1594"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "access-control-allow-headers",
+									"value": "*"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "NOSNIFF"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=THTQuJewI0tp7MDGjTcliN4%2BAVuB3tp62rbW7kWu9Htf%2BPFMLTqZIzDfOUNjHxwZO5AEioo7ZRKaeSDwlJQiwIFwr7G9%2BHBkSY8k2FKm7yFnSFsiStf21TQCyJIU3lJyNv4qapCmzOEo8hVsMjtXrX7qTVSo\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "8bda7eeba8f347c1-BOM"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": \"success\",\n    \"documentation\": \"https://www.exchangerate-api.com/docs\",\n    \"terms_of_use\": \"https://www.exchangerate-api.com/terms\",\n    \"time_last_update_unix\": 1725408001,\n    \"time_last_update_utc\": \"Wed, 04 Sep 2024 00:00:01 +0000\",\n    \"time_next_update_unix\": 1725494401,\n    \"time_next_update_utc\": \"Thu, 05 Sep 2024 00:00:01 +0000\",\n    \"base_code\": \"GBP\",\n    \"conversion_rates\": {\n        \"GBP\": 1,\n        \"AED\": 4.8165,\n        \"AFN\": 92.5283,\n        \"ALL\": 118.4918,\n        \"AMD\": 508.2772,\n        \"ANG\": 2.3476,\n        \"AOA\": 1222.2059,\n        \"ARS\": 1251.4071,\n        \"AUD\": 1.9511,\n        \"AWG\": 2.3476,\n        \"AZN\": 2.2305,\n        \"BAM\": 2.3217,\n        \"BBD\": 2.623,\n        \"BDT\": 156.7144,\n        \"BGN\": 2.3222,\n        \"BHD\": 0.4931,\n        \"BIF\": 3777.9151,\n        \"BMD\": 1.3115,\n        \"BND\": 1.7154,\n        \"BOB\": 9.0801,\n        \"BRL\": 7.3759,\n        \"BSD\": 1.3115,\n        \"BTN\": 110.1346,\n        \"BWP\": 17.6208,\n        \"BYN\": 4.2407,\n        \"BZD\": 2.623,\n        \"CAD\": 1.7756,\n        \"CDF\": 3742.6075,\n        \"CHF\": 1.1156,\n        \"CLP\": 1204.266,\n        \"CNY\": 9.3369,\n        \"COP\": 5426.6464,\n        \"CRC\": 678.839,\n        \"CUP\": 31.4763,\n        \"CVE\": 130.8908,\n        \"CZK\": 29.8006,\n        \"DJF\": 233.0835,\n        \"DKK\": 8.8556,\n        \"DOP\": 78.2858,\n        \"DZD\": 175.3676,\n        \"EGP\": 63.6685,\n        \"ERN\": 19.6727,\n        \"ETB\": 145.5234,\n        \"EUR\": 1.187,\n        \"FJD\": 2.9071,\n        \"FKP\": 1,\n        \"FOK\": 8.8552,\n        \"GEL\": 3.5276,\n        \"GGP\": 1,\n        \"GHS\": 20.7717,\n        \"GIP\": 1,\n        \"GMD\": 92.5777,\n        \"GNF\": 11383.5093,\n        \"GTQ\": 10.1496,\n        \"GYD\": 274.6632,\n        \"HKD\": 10.2269,\n        \"HNL\": 32.5434,\n        \"HRK\": 8.9439,\n        \"HTG\": 173.0592,\n        \"HUF\": 467.4156,\n        \"IDR\": 20390.2208,\n        \"ILS\": 4.8333,\n        \"IMP\": 1,\n        \"INR\": 110.1313,\n        \"IQD\": 1718.7082,\n        \"IRR\": 55730.7775,\n        \"ISK\": 182.1254,\n        \"JEP\": 1,\n        \"JMD\": 204.7549,\n        \"JOD\": 0.9299,\n        \"JPY\": 190.8739,\n        \"KES\": 169.1795,\n        \"KGS\": 111.6353,\n        \"KHR\": 5339.4533,\n        \"KID\": 1.951,\n        \"KMF\": 583.9938,\n        \"KRW\": 1759.6458,\n        \"KWD\": 0.4006,\n        \"KYD\": 1.0929,\n        \"KZT\": 633.7403,\n        \"LAK\": 28835.6885,\n        \"LBP\": 117380.4816,\n        \"LKR\": 392.8997,\n        \"LRD\": 255.9997,\n        \"LSL\": 23.5514,\n        \"LYD\": 6.2483,\n        \"MAD\": 12.8038,\n        \"MDL\": 22.8331,\n        \"MGA\": 5977.8025,\n        \"MKD\": 73.0188,\n        \"MMK\": 3605.1928,\n        \"MNT\": 4405.494,\n        \"MOP\": 10.5335,\n        \"MRU\": 52.2111,\n        \"MUR\": 60.9647,\n        \"MVR\": 20.2691,\n        \"MWK\": 2287.8254,\n        \"MXN\": 25.9861,\n        \"MYR\": 5.7299,\n        \"MZN\": 83.8744,\n        \"NAD\": 23.5514,\n        \"NGN\": 2083.419,\n        \"NIO\": 48.3416,\n        \"NOK\": 14.0037,\n        \"NPR\": 176.2153,\n        \"NZD\": 2.1193,\n        \"OMR\": 0.5043,\n        \"PAB\": 1.3115,\n        \"PEN\": 4.9523,\n        \"PGK\": 5.1215,\n        \"PHP\": 74.1589,\n        \"PKR\": 365.8075,\n        \"PLN\": 5.0809,\n        \"PYG\": 10043.8465,\n        \"QAR\": 4.7739,\n        \"RON\": 5.9107,\n        \"RSD\": 139.0633,\n        \"RUB\": 115.389,\n        \"RWF\": 1794.4433,\n        \"SAR\": 4.9182,\n        \"SBD\": 11.0301,\n        \"SCR\": 18.2515,\n        \"SDG\": 587.1833,\n        \"SEK\": 13.5104,\n        \"SGD\": 1.7155,\n        \"SHP\": 1,\n        \"SLE\": 29.6459,\n        \"SLL\": 29646.2628,\n        \"SOS\": 749.9232,\n        \"SRD\": 38.0664,\n        \"SSP\": 4414.913,\n        \"STN\": 29.0829,\n        \"SYP\": 16887.9941,\n        \"SZL\": 23.5514,\n        \"THB\": 44.9395,\n        \"TJS\": 13.9453,\n        \"TMT\": 4.5912,\n        \"TND\": 4.006,\n        \"TOP\": 3.0382,\n        \"TRY\": 44.5944,\n        \"TTD\": 9.0908,\n        \"TVD\": 1.951,\n        \"TWD\": 42.0975,\n        \"TZS\": 3562.1963,\n        \"UAH\": 54.2159,\n        \"UGX\": 4876.6742,\n        \"USD\": 1.3116,\n        \"UYU\": 53.0007,\n        \"UZS\": 16540.7282,\n        \"VES\": 48.0533,\n        \"VND\": 32660.2749,\n        \"VUV\": 154.4267,\n        \"WST\": 3.5377,\n        \"XAF\": 778.6584,\n        \"XCD\": 3.5411,\n        \"XDR\": 0.9763,\n        \"XOF\": 778.6584,\n        \"XPF\": 141.6539,\n        \"YER\": 328.5126,\n        \"ZAR\": 23.5515,\n        \"ZMW\": 34.4773,\n        \"ZWL\": 18.1983\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Budget",
+			"item": [
+				{
+					"name": "Create Budget",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"budget\": 5000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/create_budget",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"create_budget"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"budget\": 5000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/create_budget",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"create_budget"
+									]
+								}
+							},
+							"status": "CREATED",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 04 Sep 2024 03:20:56 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "47"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Budget created successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Fetch Budget",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/fetch_budget",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"fetch_budget"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/fetch_budget",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"fetch_budget"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 04 Sep 2024 03:26:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "184"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"budgets\": [\n        {\n            \"budget\": 5000,\n            \"budget_id\": 1,\n            \"created_at\": \"Wed, 04 Sep 2024 08:50:56 GMT\",\n            \"updated_at\": \"Wed, 04 Sep 2024 08:50:56 GMT\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Budget",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"budget\": 6000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/update_budget/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"update_budget",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "Get All Transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/get_transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"get_transactions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Transactions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/get_transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"get_transactions"
+									]
+								}
+							},
+							"status": "NOT FOUND",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Sep 2024 14:24:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"No transactions found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Home Transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/get_transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"get_transactions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/get_transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"get_transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 04 Sep 2024 06:17:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "391"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"amount\": \"50.00\",\n        \"created_at\": \"Wed, 04 Sep 2024 05:20:06 GMT\",\n        \"description\": \"Shared dinner\",\n        \"is_paid\": 1,\n        \"payment_id\": 1,\n        \"split_id\": 1,\n        \"user_id\": 1\n    },\n    {\n        \"amount\": \"150.00\",\n        \"created_at\": \"Wed, 04 Sep 2024 05:24:24 GMT\",\n        \"description\": \"Group dinner\",\n        \"is_paid\": 1,\n        \"payment_id\": 4,\n        \"split_id\": 3,\n        \"user_id\": 1\n    }\n]"
+						},
+						{
+							"name": "Get Home Transactions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/get_transactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"get_transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Sep 2024 14:20:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"No transactions found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Total Amount Current Month",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/get_total_amount_current_month",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"get_total_amount_current_month"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Tota; Amount Current Month",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/get_total_amount_current_month",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"get_total_amount_current_month"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.0.4 Python/3.12.5"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Sep 2024 14:17:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total_amount\": \"200.00\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/get_accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"get_accounts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNTY5MTkxMywianRpIjoiYjY5NDQ4NWUtNmYyOS00ZDI4LThkOTQtNjdiZTNhY2E3MzNmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzI1NjkxOTEzLCJjc3JmIjoiY2QzM2RhODQtNWZjNy00YTAwLTlkNGYtOTQzN2IyMmQ1OWU0IiwiZXhwIjoxNzI4MjgzOTEzfQ.kbiY7gcg7X_2qZmAgGRWS_4pOU_Lne58FypcbIy7dTI",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
